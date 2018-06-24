@@ -1,4 +1,3 @@
-
 def file_reading(filename):
     path = "problem-instances/" + filename
     file = open(path, 'r')
