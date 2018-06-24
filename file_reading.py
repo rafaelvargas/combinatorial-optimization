@@ -11,7 +11,7 @@ def file_reading(filename):
     # Get limits of the groups
     second_line = file.readline().split(' ')
     groups_limits = []
-    for i in range(0, num_groups, 2):
+    for i in range(0, num_groups * 2, 2):
         groups_limits.append((int(second_line[i]), int(second_line[i+1])))
 
     # Get vertices weights
