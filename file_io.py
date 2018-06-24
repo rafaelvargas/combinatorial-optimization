@@ -29,3 +29,9 @@ def file_reading(filename):
     file.close()
 
     return num_vertices, num_groups, groups_limits, vertices_weights, edges
+
+def file_writing(filename, groups, score):
+    file = open("results/" + filename + ".txt", 'w')
+    file.write(str(score) + "\n")
+    for g in groups:
+        file.write(str(g[0]) + "\n")
