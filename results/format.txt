@@ -1,0 +1,9 @@
+score
+initial_score (from random-greedy)
+parameters: num. of grasp iter. | RCL size | num. of local search iter.
+time_elapsed (in seconds)
+group 1
+.
+.
+.
+group N
