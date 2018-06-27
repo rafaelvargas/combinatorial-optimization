@@ -50,5 +50,5 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    # Arguments given are filename | num. of grasp iter. | RCL size | num. of local search iter.
+    # Arguments given are: filename of instance | num. of grasp iter. | RCL size | num. of local search iter.
     main(argv)

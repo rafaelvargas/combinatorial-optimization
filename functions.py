@@ -2,11 +2,6 @@ from random import randint, seed
 from copy import deepcopy
 
 
-# Sort edges by their values
-def construct_candidate_set(edges):
-    return sorted(edges, key=lambda edge: edge[2], reverse=True)
-
-
 # Check if a vertex is in another group
 def in_another_group(groups, current_group, vertex):
     in_group = False
@@ -96,10 +91,8 @@ def greedy_randomized(rcl_size, num_vertices, num_groups, groups_limits,
                 else:
                     vertex_inserted = False
 
-            #print("Group " + str(i) + " -> " + str(g[0]))
             v_sums = v_sums + len(g[0])
-    # print("Total num. vertices: " + str(v_sums))
-    # print("Expected num. vertices: " + str(num_vertices))
+
     print("Initial solution score: " + str(current_value))
 
     return groups
@@ -134,6 +127,7 @@ def local_search(K, groups, edges, groups_limits):
 
             del modified_groups[remove_group][0][random_vertex]
             del modified_groups[remove_group][1][random_vertex]
+
             if (sum(modified_groups[remove_group][1]) >=
                     groups_limits[remove_group][0]
                     and sum(modified_groups[insert_group][1]) <=
@@ -141,7 +135,6 @@ def local_search(K, groups, edges, groups_limits):
                 new_score = check_group_value(modified_groups, edges)
 
                 if (new_score > best_score):
-                    #print("new score: " + str(new_score))
                     best_score = new_score
                     best_sol = modified_groups
                     improved = True
